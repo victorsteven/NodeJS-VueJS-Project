@@ -1,8 +1,8 @@
 <template>
 
   <div>
-    <v-layout column>
-      <v-flex xs6 offset-xs3>
+    <v-layout>
+      <v-flex xs8 offset-xs2>
         <panel title="Songs">
           <v-btn 
           @click="navigateTo({name: 'songs-create'})"
@@ -61,7 +61,7 @@ export default {
 
   async mounted() {
     this.songs = (await SongsService.index()).data;
-    console.log('songs: ', this.song)
+    console.log('songs: ', this.songs)
   },
 
   methods: {

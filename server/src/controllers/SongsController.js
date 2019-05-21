@@ -20,8 +20,20 @@ module.exports = {
       const song = await Song.create(req.body);
       res.send(song);
     } catch (err) {
-      res.status(400).send({
+      res.status(500).send({
         error: 'Error trying to create songs'
+      });
+    }
+  },
+
+  async show(req, res) {
+    try {
+      console.log('this is the id: ', req.params.songId);
+      const song = await Song.findByPk(req.params.songId);
+      res.send(song);
+    } catch (err) {
+      res.status(500).send({
+        error: 'Error trying to get this song'
       });
     }
   },

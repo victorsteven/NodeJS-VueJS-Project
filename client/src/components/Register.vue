@@ -1,5 +1,5 @@
 <template>
-  <v-layout column>
+  <v-layout>
     <v-flex xs4 offset-xs4>
         <panel title="Register">
         <div class="pl-4 pr-4 pt-2 pb-2">
