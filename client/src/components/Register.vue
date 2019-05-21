@@ -1,18 +1,12 @@
 <template>
-
-  <div>
-    <v-layout column>
-      <v-flex xs4 offset-xs4>
-        <div class="white elevation-2">
-          <v-toolbar flat dense class="cyan" dark>
-            <v-toolbar-title>Register</v-toolbar-title>
-          </v-toolbar>
-
-          <div class="pl-4 pr-4 pt-2 pb-2">
-            <form action="" autocomplete="off">
-            <v-text-field
-            v-model="email"
-            label="Email"
+  <v-layout column>
+    <v-flex xs4 offset-xs4>
+        <panel title="Register">
+        <div class="pl-4 pr-4 pt-2 pb-2">
+          <form action="" autocomplete="off">
+          <v-text-field
+          v-model="email"
+          label="Email"
           ></v-text-field>
           <v-text-field
             label="Title"
@@ -20,27 +14,27 @@
             type="password"
             auto-complete="new-password"
           ></v-text-field>
-
-            </form>
-
-            <br>
-            <div class="error" v-html="error"></div>
-            <br>
-            <v-btn class="cyan" @click="register">Register</v-btn>
-          </div>
+          </form>
+          <br>
+          <div class="error" v-html="error"></div>
+          <br>
+          <v-btn class="cyan" @click="register">Register</v-btn>
         </div>
-      </v-flex>
-    </v-layout>
-    
-  </div>
+      </panel>
+    </v-flex>
+  </v-layout>
 </template>
 
  
 <script>
 
 import AuthenticationService from '../../services/AuthenticationService'
+import Panel from '@/components/Panel'
+
 export default {
-  
+  components: {
+    Panel
+  },
   data() {
     return {
       email: '',
