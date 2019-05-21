@@ -9,5 +9,8 @@ export default {
       host: process.env.HOST || 'localhost',
       storage: './node_vue.sqlite'
     }
+  },
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
   }
 };
